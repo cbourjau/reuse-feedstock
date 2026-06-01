@@ -9,7 +9,7 @@ source:
   sha256: 4feae057a2334c9a513e6933cdb9be819d8b822f3b5b435a36138bd218897d23
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
   entry_points:
@@ -28,11 +28,8 @@ requirements:
     - license-expression >=21.6.14
     - tomlkit >=0.8
     - python-debian >=0.1.48
-    - python-magic >=0.4.12
-
-    # optionals
-    - charset-normalizer >=2.0.5
-    - chardet >=3.0.2
+    - python-magic >=0.4.12       # [unix]
+    - charset-normalizer >=2.0.5  # [win]
     - boolean.py >=3.8
     - binaryornot >=0.4.4
 
